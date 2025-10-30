@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie Night Assistant</title>
+    <!-- Link to the favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon-32x32.png') }}" type="image/x-icon">
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <!-- Header spanning 100% of the width -->
+    <header>
+        <h1>Movie Night Assistant</h1>
+        <p>Your go-to movie selection tool</p>
+    </header>
+
+    <div class="container">
+        <div class="side">
+            <!-- Left side content -->
+            <h2>Left Sidebar</h2>
+            <p>Content for the left side.</p>
+
+            <!-- Movie Genres Dropdown -->
+            <h1>Movie Genres</h1>
+            <form method="POST">
+                <div class="dropdown-container">
+                    <button class="dropdown-button">Select Genres</button>
+                    <div class="dropdown-menu">
+                        <div class="checkbox-container">
+                            {% for genre in movie_genres %}
+                            <label>
+                                <input type="checkbox" name="genres" value="{{ genre }}">
+                                {{ genre }}
+                            </label>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                
+            </form>
+            <!-- Spoken Languages Dropdown -->
+            <h1>Spoken Languages</h1>
+            <div class="dropdown-container">
+                <button class="dropdown-button">Select Languages</button>
+                <div class="dropdown-menu">
+                    <div class="checkbox-container">
+                        {% for language in spoken_languages %}
+                        <label>
+                            <input type="checkbox" name="languages" value="{{ language }}">
+                            {{ language }}
+                        </label>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Runtimes Dropdown -->
+            <h1>Runtimes</h1>
+            <div class="dropdown-container">
+                <button class="dropdown-button">Select Runtimes</button>
+                <div class="dropdown-menu">
+                    <div class="checkbox-container">
+                        {% for runtime in runtimes %}
+                        <label>
+                            <input type="checkbox" name="runtimes" value="{{ runtime }}">
+                            {{ runtime }}
+                        </label>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scores Dropdown -->
+            <h1>Scores</h1>
+            <div class="dropdown-container">
+                <button class="dropdown-button">Select Scores</button>
+                <div class="dropdown-menu">
+                    <div class="checkbox-container">
+                        {% for score in scores %}
+                        <label>
+                            <input type="checkbox" name="scores" value="{{ score }}">
+                            {{ score }}
+                        </label>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Release Dates Dropdown -->
+            <h1>Release Dates</h1>
+            <div class="dropdown-container">
+                <button class="dropdown-button">Select Release Dates</button>
+                <div class="dropdown-menu">
+                    <div class="checkbox-container">
+                        {% for release_date in release_dates %}
+                        <label>
+                            <input type="checkbox" name="release_dates" value="{{ release_date }}">
+                            {{ release_date }}
+                        </label>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="main">
+            <!-- Main content -->
+            <h1>Main Content</h1>
+            <p>This is the main content area that occupies 70% of the width.</p>
+
+            <p class="special-paragraph">This is a basic HTML page.</p>
+            <p id="unique-paragraph">Testing the unique id.</p>
+        </div>
+
+        <div class="side">
+            <!-- Right side content -->
+            <h2>Right Sidebar</h2>
+            <p>Content for the right side.</p>
+
+            <footer>
+                <p>&copy; 2025 Movie Night Assistant. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+
+</body>
+</html>

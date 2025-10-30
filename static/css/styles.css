@@ -1,0 +1,148 @@
+﻿/* Container for the dropdown button and menu */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* The container holds the three columns and uses flexbox to align them */
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* The side columns (left and right) take up 15% of the width each */
+.side {
+    width: 15%;
+    background-color: #f4f4f4;
+    padding: 10px;
+}
+
+/* The main column takes up 70% of the width */
+.main {
+    width: 70%;
+    background-color: #fff;
+    padding: 10px;
+}
+
+/* Styling for the header that spans the entire width of the page */
+header {
+    width: 100%;
+    background-color: #4CAF50; /* Example background color */
+    color: white; /* Text color */
+    text-align: center;
+    padding: 20px 0; /* Top and bottom padding */
+}
+
+    header h1 {
+        margin: 0;
+        font-size: 2.5em; /* Larger font size for the title */
+    }
+
+    header p {
+        margin: 10px 0 0; /* Margin for the subtitle */
+        font-size: 1.2em;
+    }
+
+/* Styling for the footer that spans the entire width of the page */
+footer {
+    width: 100%;
+    background-color: #333; /* Dark background color */
+    color: white; /* White text color */
+    text-align: center;
+    padding: 10px 0; /* Padding for the footer */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+    footer p {
+        margin: 0;
+        font-size: 1em;
+    }
+
+/* Dropdown container */
+.dropdown-container {
+    position: relative;
+    margin-top: 20px;
+    width: 200px;
+}
+
+/* Dropdown button */
+.dropdown-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+    .dropdown-button:hover {
+        background-color: #0000FF;
+    }
+
+/* By default, the dropdown-menu should be hidden */
+.dropdown-menu {
+    display: none; /* Make sure the menu is hidden initially */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 500px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 9999;
+}
+
+/* Show the dropdown menu on click */
+.dropdown-container.open .dropdown-menu {
+    display: block;
+}
+
+/* Arrow styling */
+.dropdown-button::after {
+    content: "▼"; /* Unicode character for downward arrow */
+    font-size: 18px;
+    margin-left: 10px; /* Space between text and arrow */
+}
+
+/* Arrow pointing up when dropdown is open */
+.dropdown-container.open .dropdown-button::after {
+    content: "▲"; /* Unicode character for upward arrow */
+}
+
+/* Style for the checkbox container inside the dropdown */
+.checkbox-container {
+    display: grid;
+    grid-template-columns: repeat(4, 100px); /* 4 columns with 100px width each */
+    gap: 10px; /* Space between checkboxes */
+    padding: 10px;
+}
+
+    .checkbox-container label {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    .checkbox-container input[type="checkbox"] {
+        margin-right: 10px;
+    }
+
+/* Basic styling for the dropdown */
+.dropdown-menu label {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.special-paragraph {
+    color: #11f732;
+}
+
+#unique-paragraph {
+    color: #ff19fa;
+}

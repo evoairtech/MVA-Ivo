@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtered Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <h1>Filtered Movie Results</h1>
+
+    {% if filtered_movies %}
+    <ul>
+        {% for movie in filtered_movies %}
+        <li>
+            <strong>{{ movie['title'] }}</strong> <br>
+            <em>{{ movie['genres'] }}</em> <br>
+            <small>{{ movie['release_date'] }} | Rating: {{ movie['vote_average'] }} | Runtime: {{ movie['runtime'] }} min</small>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No movies found matching your filters.</p>
+    {% endif %}
+
+    <br>
+    <a href="{{ url_for('index') }}">Back to the filters</a>
+
+</body>
+</html>
